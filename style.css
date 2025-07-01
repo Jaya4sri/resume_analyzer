@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('assets/background.jpeg') center center / cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background: rgba(0, 0, 0);
+    color: #f88282;
+    padding: 9px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.tips-link {
+    display: flex;
+    align-items: center;
+    background: #c4cc50;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.tips-link:hover {
+    background: #eecf09;
+}
+
+.tips-icon {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.sample-link {
+    display: block;
+    text-align: center;
+    background: #cbd357;
+    color: #f90505;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sample-link:hover {
+    background: #07b733;
+}
+
+footer {
+    background: rgb(0, 0, 0);
+    color: #f88282;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.overlay {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup {
+    background: rgba(1, 1, 1, 0.669);
+    padding: 40px;
+    border-radius: 15px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+    color: #fdfdfd;
+}
+
+.upload-label {
+    background-color: #2c3e50;
+    color: #dbe97f;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+#resumeInput {
+    display: none;
+}
+
+.floating-icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+    animation: float 2s ease-in-out infinite;
+}
+
+#analyzeBtn {
+    background: #e7f04b;
+    color: #d23131c1;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+#analyzeBtn:hover {
+    background: #2980b9;
+}
+
+.result-section {
+    margin-top: 25px;
+    text-align: left;
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.file-display {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: #ecf0f1;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    word-break: break-word;
+    max-width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Slider Styles with Arrows */
+
+.slider-container {
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide-wrapper {
+    min-width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.slide {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 8px;
+    background: #f88282;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #d86c6c;
+}
+
+.arrow {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}

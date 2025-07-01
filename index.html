@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1><img src="assets/icons/analysis.svg" class="icon"> AI Resume Analyzer</h1>
+    </div>
+    <div class="header-right">
+        <a href="tips.html" class="tips-link">
+            <img src="assets/icons/tips.svg" class="tips-icon"> Tips
+        </a>
+    </div>
+</header>
+
+<div class="overlay">
+    <div class="popup">
+        <h2>Upload Your Resume</h2>
+        <label for="resumeInput" class="upload-label">
+            <img src="assets/icons/file.svg" class="floating-icon"> Select Resume
+        </label>
+        <input type="file" id="resumeInput" accept=".txt,.pdf,.docx">
+
+        <div id="fileDisplay" class="file-display hidden"></div>
+        <button id="analyzeBtn">Analyze Resume</button>
+
+        <div id="result" class="result-section hidden">
+            <h3>Analysis Report</h3>
+            <p id="reportText"></p>
+        </div>
+
+        <div id="scoreSection" class="result-section hidden">
+            <h3>Resume Score Breakdown</h3>
+            <canvas id="scoreChart" width="250" height="250"></canvas>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 AI Resume Analyzer. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

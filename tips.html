@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Tips - AI Resume Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<body>
+
+<header>
+    <div class="header-left">
+        <h1><img src="assets/icons/analysis.svg" class="icon"> AI Resume Analyzer</h1>
+    </div>
+    
+    <div class="header-right">
+        <a href="tips.html" class="tips-link">
+        <img src="assets/icons/tips.svg" class="tips-icon"> Tips
+        </a>
+    </div>
+</header>
+
+<main class="overlay">
+  <div class="popup">
+    <h2>Resume Building Tips</h2>
+    <ul style="text-align:left; margin-bottom:15px;">
+      <!-- Your tips list -->
+    </ul>
+    <button id="viewSamplesBtn" class="sample-link">
+      <img src="assets/icons/samples.svg" class="tips-icon"> View Sample Resumes
+    </button>
+    <div id="scoreSection" class="result-section hidden">
+    <h3>Resume Score Breakdown</h3>
+    <canvas id="scoreChart" width="250" height="250"></canvas>
+    </div>
+
+    <div id="sliderContainer" class="slider-container hidden">
+    
+        <button class="arrow left" id="prevBtn">&#8592;</button>
+
+        <div class="slider" id="slider">
+            <div class="slide-wrapper">
+                <img src="assets/samples/resume1.png" class="slide" alt="Sample Resume 1">
+                <a href="assets/samples/resume1.pdf" download class="download-btn">📥 Download</a>
+            </div>
+            <div class="slide-wrapper">
+                <img src="assets/samples/resume2.png" class="slide" alt="Sample Resume 2">
+                <a href="assets/samples/resume2.pdf" download class="download-btn">📥 Download</a>
+            </div>
+            <div class="slide-wrapper">
+                <img src="assets/samples/resume3.jpg" class="slide" alt="Sample Resume 3">
+                <a href="assets/samples/resume3.pdf" download class="download-btn">📥 Download</a>
+            </div>
+        </div>
+
+        <button class="arrow right" id="nextBtn">&#8594;</button>
+
+    </div>
+
+  </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 AI Resume Analyzer. All rights reserved.</p>
+</footer>
+
+ 
+<script>
+const viewSamplesBtn = document.getElementById('viewSamplesBtn');
+const sliderContainer = document.getElementById('sliderContainer');
+const slider = document.getElementById('slider');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentSlide = 0;
+const totalSlides = slider.children.length;
+
+viewSamplesBtn.addEventListener('click', () => {
+    sliderContainer.classList.toggle('hidden');
+    currentSlide = 0;
+    updateSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlider();
+});
+
+nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+});
+
+function updateSlider() {
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+</script>
+
+
+</html>
